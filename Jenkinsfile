@@ -13,6 +13,9 @@ agent { docker 'gradle:4.5-jdk8-alpine'}
         }
       }
       stage('deploy to production') {
+        when {
+           branch 'master'
+        }
         steps {
           echo "deploying to production"
         }
